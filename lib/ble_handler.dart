@@ -34,7 +34,7 @@ class BleData {
 
   @override
   String toString() {
-    return 'Command: $command,\nData: $data';
+    return 'Data: $data';
   }
 }
 
