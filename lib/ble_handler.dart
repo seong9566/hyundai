@@ -8,9 +8,9 @@ import 'package:fluttertoast/fluttertoast.dart';
 class BleData {
   // 파싱 이후 데이터
   String? data;
-  String? command;
+  // String? command;
   BleData({
-    this.command,
+    // this.command,
     this.data,
   });
 
@@ -19,16 +19,17 @@ class BleData {
     String result = String.fromCharCodes(value);
     var items = result.split(",");
     debugPrint("items: $items");
-    if (items.length >= 2) {
-      String command = items[0];
-      String data = items.sublist(1).join(",");
-      return BleData(
-        command: command,
-        data: data,
-      );
-    } else {
-      return BleData();
-    }
+    return BleData(data: result);
+    // if (items.length >= 2) {
+    //   String command = items[0];
+    //   String data = items.sublist(1).join(",");
+    //   return BleData(
+    //     command: command,
+    //     data: data,
+    //   );
+    // } else {
+    //   return BleData();
+    // }
   }
 
   @override
